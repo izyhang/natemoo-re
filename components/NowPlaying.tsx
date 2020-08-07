@@ -149,7 +149,7 @@ export const Player: React.FC<Props> = ({
           <Text id="track" weight="bold">
             {`${track ?? ""} `.trim()}
           </Text>
-          <Text id="artist" color={!track ? isDark ? "dark" : "gray" : undefined}>
+          <Text id="artist" color={isDark ? "dark" : (!track ? "gray" : undefined)}>
             {artist || "Nothing playing..."}
           </Text>
           {track && (
