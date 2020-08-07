@@ -9,6 +9,7 @@ export interface Props {
   progress: number;
   duration: number;
   isPlaying: boolean;
+  isDark: boolean;
 }
 
 export const Player: React.FC<Props> = ({
@@ -18,6 +19,7 @@ export const Player: React.FC<Props> = ({
   progress,
   duration,
   isPlaying,
+  isDark,
 }) => {
   return (
     <ReadmeImg width="256" height="64">
@@ -147,7 +149,7 @@ export const Player: React.FC<Props> = ({
           <Text id="track" weight="bold">
             {`${track ?? ""} `.trim()}
           </Text>
-          <Text id="artist" color={!track ? "gray" : undefined}>
+          <Text id="artist" color={!track ? isDark ? "dark" : "gray" : undefined}>
             {artist || "Nothing playing..."}
           </Text>
           {track && (
